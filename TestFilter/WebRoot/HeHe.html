@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HeHe.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		function clickme(){
+		//	alert($("input").val());
+		//	$("input").each(function(){
+		//		alert($(this).val());
+		//	});
+		//	alert($("#pp").val());
+		//	alert($("[name]=aihao").length);
+		
+		//显示被选中复选框的值
+			$("input:checked").each(
+				function xx(){
+					alert($(this).val());
+				}
+			);
+			
+		//统计被选中的复选框个数
+			var count=0;
+			$("[name=aihao]").each(
+				function xx(){
+					if($(this).attr("checked")==true)
+					count++;
+				}
+			);
+			alert(count);
+			
+		alert($("input:checked").length);
+		//根据id取值
+			alert($("#pp").attr("name"));
+			
+		}
+		
+		function tcss(){
+			alert($("p").css("color"));
+			alert($("p").css("color","black").css("color"));
+			$("p").css("background-color","purple");
+		}
+		
+		
+		function ttext(){
+			alert($("#mydiv").text());
+			alert($("#mydiv").html("<a href='#'>asd</a>123123"));
+		}
+		
+		function tshow(){
+			$("#mydiv1").hide(2000);
+		}
+		function thide(){
+			$("#mydiv1").show(2000);
+		}
+		
+		function tappend(){
+			$("#mydiv2").append("<a href='#'>aaa</a>");
+		}
+		
+		$(document).ready( //onload事件相同
+			function(){
+			/*	//alert("页面加载完成 执行");
+				$("#mydiv2").bind("click",function tappend(){
+					$("#mydiv2").append("<a href='#'>aaa</a>");
+				}); 
+			*/
+			$("#mydiv2").click(
+				function tappend(){
+					$(this).append("<a href='#'>aaa</a>");
+				}
+			);
+			
+			$("#mydiv2").mouseover(
+				function(){
+					$("#mydiv2").css("background-color","red");
+				}
+			);
+			$("#mydiv2").mouseout(
+				function(){
+					$("#mydiv2").css("background-color","white");
+				}
+			);
+			
+
+			$("tbody tr:even").css("backgroundColor","red");
+			
+			//全选
+			$("#checkAll").click(function(){
+			if(this.checked){
+				$("tbody tr td input:checkbox").attr("checked",true);
+			} else {
+				$("tbody tr td input:checkbox").attr("checked",false);
+			}
+			});
+			
+			
+			
+			//删除
+			$("#del").click(function(){
+			var intL=$("tbody tr td input:checkbox:not('#checkAll')").length;
+			if(intL!=0){
+				$("tbody tr td input:checkbox:not('#checkAll')").each(function(index));
+			}
+			alert(intL);
+			});
+			
+			
+		});
+		
+		
+		
+		
+		
+		
+		
+		
+			
+			
+		/*
+		$(
+		function (){
+		alert("xxxx");
+		}
+		);
+		*/
+		
+	</script>
+  </head>
+  
+  <body>
+  
+  <div id="mydiv2" >
+  div2
+  </div>
+  
+  
+  
+  
+  
+  
+  <a href="javascript:void(0)" onclick="thide()">显示</a>
+  <div id="mydiv1" onclick="tshow()">
+  	abcdefg
+  	<div>
+  	----------abcdeeqwf
+  	</div>
+  </div>
+  <p style="color:red" onclick="tcss()">
+  	红色的字
+  </p>
+  
+  <input type="checkbox" name="aihao" checked="checked" value="football">足球
+  <input type="checkbox" name="aihao" checked="checked" value="basketball">篮球
+  <input type="checkbox" name="aihao" checked="checked" value="pingpangball">乒乓球
+   	<input type="text" name="xx" id="pp">
+   	<input type="button" value="click me" onclick="clickme()">
+   	
+   	<table>
+   		<thead>
+   			<tr>
+   				<td>选项</td><td>编号</td><td>姓名</td>
+   			</tr>
+   		</thead>
+   		<tbody>
+   			<tr id="0">
+   				<td><input type="checkbox" id="Checkbox1" name="" value="0"></td>
+   				<td>1</td>
+   				<td>张三</td>
+   			</tr>
+   			<tr id="1">
+   				<td><input type="checkbox" id="Checkbox1" name="" value="0"></td>
+   				<td>1</td>
+   				<td>张三</td>
+   			</tr>
+   			<tr id="2">
+   				<td><input type="checkbox" id="Checkbox1" name="" value="0"></td>
+   				<td>1</td>
+   				<td>张三</td>
+   			</tr>
+   		</tbody>
+   		<tfoot>
+   			<tr>
+   				<td><input type="checkbox" id="checkAll" name="">全选/全不选</td>
+   				<td><a href="javascript:void(0)" id="del">x</a></td>
+   				<td>xx</td>
+   			</tr>
+   		</tfoot>
+	</table>   	
+   	
+   	
+   	
+  </body>
+</html>

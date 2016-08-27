@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mysnake.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<style type="text/css">
+		td{background-color:white;}
+	</style>
+	<script type="text/javascript">
+		//豆豆
+		var bx=parseInt(Math.random()*10+1);
+		var by=parseInt(Math.random()*10+1);
+		//蛇
+		var snake=new Array();//创建 蛇  的数组
+		function init(){//初始化的方法
+		//画出豆豆
+		document.getElementById(bx+"-"+by).style.backgroundColor="gray";	
+		var sx=parseInt(Math.random()*10+1);
+		var sy=parseInt(Math.random()*10+1);
+		snake[0]=sx+"-"+sy;//蛇头的坐标
+		document.getElementById(snake[0]).style.backgroundColor="red";	
+		}
+		
+		function move(){//左37 上38 右39 下40
+			var direct=event.keyCode;//键位码
+			//alert(direct);
+			var p=snake[0].split("-");//1-2; //蛇头
+			switch(direct)
+			{
+				case 37:
+					p[1]=parseInt(p[1])-1;
+					break;
+				case 38:
+					p[0]=parseInt(p[0])-1;
+					break;
+				case 39:
+					p[1]=parseInt(p[1])+1;
+					break;
+				case 40:
+					p[0]=parseInt(p[0])+1;
+					break;
+			}
+			//alert(snake[0]);
+			snake[0]=p[0]+"-"+p[1];//更新蛇头的位置
+			//alert(snake[0]);
+			document.getElementById(snake[0]).style.backgroundColor="red";	
+			repaint();
+		}
+		
+		function repaint(){
+		//蛇走过的位置变成白色
+		//蛇的数组  再绘制
+		//豆子 绘制
+			var tds=document.getElementsByTagName("td");
+			for(var i=0;i<tds.length;i++){
+				tds[i].style.backgroundColor="white";
+			}
+			for(var x=0;x<snake.length;x++){
+				document.getElementById(snake[0]).style.backgroundColor="red";	
+			}
+			document.getElementById(bx+"-"+by).style.backgroundColor="gray";	
+		}
+	</script>
+	
+  </head>
+  
+  <body onload="init()" onkeydown="move()" >
+     <table width="200" height="200" align="center" cellspacing="1" cellpadding="1" bgcolor="blac">
+  <tr>
+	<td id="1-1">&nbsp;</td>
+	<td id="1-2">&nbsp;</td>
+	<td id="1-3">&nbsp;</td>
+	<td id="1-4">&nbsp;</td>
+	<td id="1-5">&nbsp;</td>
+	<td id="1-6">&nbsp;</td>
+	<td id="1-7">&nbsp;</td>
+	<td id="1-8">&nbsp;</td>
+	<td id="1-9">&nbsp;</td>
+	<td id="1-10">&nbsp;</td>
+  </tr>
+ <tr>
+	<td id="2-1">&nbsp;</td>
+	<td id="2-2">&nbsp;</td>
+	<td id="2-3">&nbsp;</td>
+	<td id="2-4">&nbsp;</td>
+	<td id="2-5">&nbsp;</td>
+	<td id="2-6">&nbsp;</td>
+	<td id="2-7">&nbsp;</td>
+	<td id="2-8">&nbsp;</td>
+	<td id="2-9">&nbsp;</td>
+	<td id="2-10">&nbsp;</td>
+  </tr>
+  <tr>
+	<td id="3-1">&nbsp;</td>
+	<td id="3-2">&nbsp;</td>
+	<td id="3-3">&nbsp;</td>
+	<td id="3-4">&nbsp;</td>
+	<td id="3-5">&nbsp;</td>
+	<td id="3-6">&nbsp;</td>
+	<td id="3-7">&nbsp;</td>
+	<td id="3-8">&nbsp;</td>
+	<td id="3-9">&nbsp;</td>
+	<td id="3-10">&nbsp;</td>
+  </tr>
+  <tr>
+	<td id="4-1">&nbsp;</td>
+	<td id="4-2">&nbsp;</td>
+	<td id="4-3">&nbsp;</td>
+	<td id="4-4">&nbsp;</td>
+	<td id="4-5">&nbsp;</td>
+	<td id="4-6">&nbsp;</td>
+	<td id="4-7">&nbsp;</td>
+	<td id="4-8">&nbsp;</td>
+	<td id="4-9">&nbsp;</td>
+	<td id="4-10">&nbsp;</td>
+  </tr>
+  <tr>
+	<td id="5-1">&nbsp;</td>
+	<td id="5-2">&nbsp;</td>
+	<td id="5-3">&nbsp;</td>
+	<td id="5-4">&nbsp;</td>
+	<td id="5-5">&nbsp;</td>
+	<td id="5-6">&nbsp;</td>
+	<td id="5-7">&nbsp;</td>
+	<td id="5-8">&nbsp;</td>
+	<td id="5-9">&nbsp;</td>
+	<td id="5-10">&nbsp;</td>
+  </tr>
+  <tr>
+	<td id="6-1">&nbsp;</td>
+	<td id="6-2">&nbsp;</td>
+	<td id="6-3">&nbsp;</td>
+	<td id="6-4">&nbsp;</td>
+	<td id="6-5">&nbsp;</td>
+	<td id="6-6">&nbsp;</td>
+	<td id="6-7">&nbsp;</td>
+	<td id="6-8">&nbsp;</td>
+	<td id="6-9">&nbsp;</td>
+	<td id="6-10">&nbsp;</td>
+  </tr>
+  <tr>
+	<td id="7-1">&nbsp;</td>
+	<td id="7-2">&nbsp;</td>
+	<td id="7-3">&nbsp;</td>
+	<td id="7-4">&nbsp;</td>
+	<td id="7-5">&nbsp;</td>
+	<td id="7-6">&nbsp;</td>
+	<td id="7-7">&nbsp;</td>
+	<td id="7-8">&nbsp;</td>
+	<td id="7-9">&nbsp;</td>
+	<td id="7-10">&nbsp;</td>
+  </tr>
+  <tr>
+	<td id="8-1">&nbsp;</td>
+	<td id="8-2">&nbsp;</td>
+	<td id="8-3">&nbsp;</td>
+	<td id="8-4">&nbsp;</td>
+	<td id="8-5">&nbsp;</td>
+	<td id="8-6">&nbsp;</td>
+	<td id="8-7">&nbsp;</td>
+	<td id="8-8">&nbsp;</td>
+	<td id="8-9">&nbsp;</td>
+	<td id="8-10">&nbsp;</td>
+  </tr>
+  <tr>
+	<td id="9-1">&nbsp;</td>
+	<td id="9-2">&nbsp;</td>
+	<td id="9-3">&nbsp;</td>
+	<td id="9-4">&nbsp;</td>
+	<td id="9-5">&nbsp;</td>
+	<td id="9-6">&nbsp;</td>
+	<td id="9-7">&nbsp;</td>
+	<td id="9-8">&nbsp;</td>
+	<td id="9-9">&nbsp;</td>
+	<td id="9-10">&nbsp;</td>
+  </tr>
+  <tr>
+	<td id="10-1">&nbsp;</td>
+	<td id="10-2">&nbsp;</td>
+	<td id="10-3">&nbsp;</td>
+	<td id="10-4">&nbsp;</td>
+	<td id="10-5">&nbsp;</td>
+	<td id="10-6">&nbsp;</td>
+	<td id="10-7">&nbsp;</td>
+	<td id="10-8">&nbsp;</td>
+	<td id="10-9">&nbsp;</td>
+	<td id="10-10">&nbsp;</td>
+  </tr>
+  </table>
+  得分：
+  </body>
+</html>

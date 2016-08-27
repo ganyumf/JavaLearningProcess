@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>shijian.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style> 
+	table td{border:1px solid #000;height:35px;width:35px} 
+
+</style> 
+    
+	<script>
+		
+		function xx()
+		{
+			alert("执行了");
+		}
+		
+		function shang()
+		{
+			alert("上");
+		}
+		function xia()
+		{
+			document.getElementById("dd").innerText=event.keyCode;
+			
+			document.getElementById("dd1").value=event.keyCode;
+		}
+		function anzhu()
+		{
+			alert("按住");
+		}
+		
+		function mover()
+		{
+			var div=document.getElementById("dd1");
+			div.style.backgroundColor="green";
+		}
+		
+		function mout()
+		{
+			var div=document.getElementById("dd");
+			div.style.backgroundColor="red";
+		}
+		function mm()
+		{
+			alert("x:"+event.x+" y:"+event.y);
+		}
+		
+		function cc()
+		{
+			alert("改了！");
+		}
+		
+	</script>
+  </head>
+  
+  <body>
+  	<table border="0" cellspacing="0" cellpadding="0"><tr><td id="dd1" >&nbsp</td><td id="dd1">&nbsp</td></tr></table>
+    <input type="text" id="hehe" onkeydown="xia()">
+    <input type="button" value="点我"><br>
+    <input type="text" id="dd1" >
+    <div id="dd" style="width: 500px;background-color: red;" onmouseover="mover()" 
+    onmouseout="mout()" onmousemove="mm()">123123 
+  </div>
+   <input type="text" onchange="cc()">
+   <select onchange="cc()">
+   <option value="1">1</option>
+    <option value="2">2</option>
+   </select>
+   
+   
+  </body>
+</html>

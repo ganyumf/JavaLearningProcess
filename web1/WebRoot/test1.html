@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test1.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+		/*function xx(){
+			var v=document.getElementById("uu");
+			alert(v);
+		}*/
+		
+		function fff(){
+			alert("获得了焦点");
+		}
+		
+		
+		function check(){
+			var b=true;
+			var v=document.getElementById("uu");
+			if(v.value==""){
+				alert("用户名不能为空！");
+				b=false;		
+			}
+			if(b==true){
+				var f=document.getElementById("ff");
+				f.submit();//提交
+			}
+		}
+			
+		function xx(){
+			var uu=document.getElementById("uu");
+			uu.focus();
+		}
+		
+		function tijiao()
+		{
+			var u=document.getElementById("uu");
+			if(v.value==""){
+				alert("用户名不能为空！");
+				 return false;		
+			}else{
+				 return true;
+			}
+		}
+		
+			
+	</script>
+  </head>
+  
+  <body>
+  	<form action="shijian.html" id="ff">
+    用户名<input type="text" onfocus="fff()" name="us" id="uu" value="123">
+    <input type="text" onfocus="fff()" name="us" id="uuu" value="123">
+    <input type="button" value="click me" onclick="check()">
+    <input type="button" value="点我" onclick="xx()">
+    <input type="submit" value="提交" onclick="tijiao()">
+    </form>
+  </body>
+</html>

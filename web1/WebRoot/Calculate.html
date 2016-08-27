@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculate.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+			
+			function inn(n)
+			{
+				var num1=document.getElementById("num1");
+				num1.value=num1.value+n;
+			}
+			
+			function fuhao(f)
+			{
+				jisuan(f);
+				num1.value="";//清空值
+			}
+			
+			function jisuan(f)
+			{
+				var n1=document.getElementById("n1");
+				var fuhao=document.getElementById("fuhao");
+				var num1=document.getElementById("num1");
+				if(fuhao.value!="")
+				{	
+					switch (fuhao.value){
+						case "+":
+							n1.value=parseInt(n1.value)+parseInt(num1.value);
+							num1.value="";
+							fuhao.value=f;
+							break;
+					}
+					
+				}
+				else{
+					n1.value=num1.value;
+					fuhao.value=f;
+					
+					}
+			}
+			
+	</script> 
+  </head>
+  
+  <body>
+  		<input id="n1">
+    	<input id="fuhao">
+    <table>
+    	
+    	<tr><td colspan="4"><input type="text" id="num1" style="text-align:right"></td></tr>
+    	<tr><td><input type="button" value="1" onclick="inn(1)"></td>
+    		<td><input type="button" value="2" onclick="inn(2)"></td>
+    		<td><input type="button" value="3" onclick="inn(3)"></td>
+    		<td><input type="button" value="+" onclick="fuhao('+')"></td>
+    	</tr>
+    	<tr><td><input type="button" value="4" onclick="inn(4)"></td>
+    		<td><input type="button" value="5" onclick="inn(5)"></td>
+    		<td><input type="button" value="6" onclick="inn(6)"></td>
+    		<td><input type="button" value="-" onclick="fuhao('-')"></td>
+    	</tr>
+    	<tr><td><input type="button" value="7" onclick="inn(7)"></td>
+    		<td><input type="button" value="8" onclick="inn(8)"></td>
+    		<td><input type="button" value="9" onclick="inn(9)"></td>
+    		<td><input type="button" value="*" onclick="fuhao('*')"></td>
+    	</tr>
+    	<tr><td><input type="button" value="0" onclick="inn(0)"></td>
+    		<td><input type="button" value="." onclick="inn('.')"></td>
+    		<td><input type="button" value="=" onclick="fuhao('=')"></td>
+    		<td><input type="button" value="/" onclick="fuhao('/')"></td>
+    	</tr>
+    </table>
+  </body>
+</html>

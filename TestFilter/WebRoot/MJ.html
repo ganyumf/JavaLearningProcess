@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MJ.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		function clickme(){
+			var x=document.getElementById("uname").value;
+			alert(x);
+			alert($("#uname").val());
+		}
+	
+	 </script>
+  </head>
+  
+  <body>
+  
+  
+  
+  
+   	<input type="text" value="xx" id="uname">
+   	<input type="button" onclick="clickme()" value="click">
+  </body>
+</html>

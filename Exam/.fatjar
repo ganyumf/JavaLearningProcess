@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Thu Apr 14 18:43:00 CST 2016
+onejar.license.required=false
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=true
+jarname=C\:\\Users\\Administrator\\Desktop\\Exam_fat.jar
+manifest.mergeall=true
+manifest.mainclass=Exam.Index
+manifest.file=<createnew>
+jarname.isextern=true
+onejar.expand=
+excludes=
+includes=

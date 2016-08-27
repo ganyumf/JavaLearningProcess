@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>helloJS.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script>
+		function hello()
+		{
+			//变量  类型 js 属于弱类型语言
+			var vv=new Array();//数组
+			vv[0]=1;
+			vv[1]=3;
+			vv[2]="ab";
+			alert(vv[0]);
+			alert(vv[2]);
+			//var a="22"+3;
+			//alert(a);
+			//alert("a");
+		}
+		function add(a,b)
+		{
+			var num1=document.getElementById("num1");
+			var num2=document.getElementById("num2");
+			var a=parseInt(num1.value);
+			var b=parseInt(num2.value);
+			alert(a+b);
+		}
+		function sub(a,b)
+		{
+			var num1=document.getElementById("num1");
+			var num2=document.getElementById("num2");
+			var a=parseInt(num1.value);
+			var b=parseInt(num2.value);
+			alert(a-b);
+		}
+		function multi(a,b)
+		{
+			var num1=document.getElementById("num1");
+			var num2=document.getElementById("num2");
+			var a=parseInt(num1.value);
+			var b=parseInt(num2.value);
+			alert(a*b);
+		}
+		function div(a,b)
+		{
+			var num1=document.getElementById("num1");
+			var num2=document.getElementById("num2");
+			var a=parseInt(num1.value);
+			var b=parseInt(num2.value);
+			alert(a/b);
+		}
+		function xx()
+		{
+			//var v=document.getElementById("mdiv");
+			//alert(v.id);
+			//alert(v.innerText);
+			//alert(num1.value+num2.value); //id.xx
+			alert(ff.n1.value+ff.n2.value); //form.name.xx
+			
+		}
+	</script>
+  </head>
+  
+  <body>
+  	<div id="mdiv">aaaaa</div>
+    <form name="ff">
+    	<input type="button" value="点点" onclick="xx()"><br>
+    	<input type="button" value="点我" onclick="hello()"><br>
+    	第一个数<input type="text" id="num1" name="n1"><br>
+    	第二个数<input type="text" id="num2" name="n2"><br>
+    	<input type="button" value="+" onclick="add()">
+    	<input type="button" value="-" onclick="sub()">
+    	<input type="button" value="*" onclick="multi()">
+    	<input type="button" value="/" onclick="div()">
+    </form>
+  </body>
+</html>
